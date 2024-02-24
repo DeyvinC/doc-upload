@@ -27,14 +27,50 @@
   height: 60px;
   width: 60vw;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .headerText {
   font-size: 2vw;
   font-weight: 500;
   width: 20vw;
-  @media (max-width: '400px') {
-    font-size: 20px;
-  }
+  text-align: center;
+  margin-bottom: 10px;
 }
-
+.headerDivider {
+  border-bottom: 1px solid rgb(196, 196, 196);
+  width: 16vw;
+}
+.Divider1 {
+  border-bottom: 1px solid rgb(196, 196, 196);
+  width: 16vw;
+  margin-top: 20px;
+}
+.mainInfoCon {
+  width: 70vw;
+  display: flex;
+  align-self: center;
+}
+.subCon {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+}
+.selImportBtn {
+  width: 30vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border-color: rgb(196, 196, 196);
+  border-radius: 6px;
+}
+.dragMainCon {
+  width: 30vw;
+  height: 20vh;
+  background-color: white;
+  border-radius: 6px;
+  border: solid 2px rgb(196, 196, 196);
+}
