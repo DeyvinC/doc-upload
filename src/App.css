@@ -13,6 +13,7 @@
 }
 .mainTitleCon {
   padding: 20px;
+  padding-bottom: 0px;
   height: 60px;
   width: 80vw;
   display: flex;
@@ -40,6 +41,7 @@
 .headerDivider {
   border-bottom: 1px solid rgb(196, 196, 196);
   width: 16vw;
+  margin-bottom: 30px;
 }
 .Divider1 {
   border-bottom: 1px solid rgb(196, 196, 196);
@@ -66,14 +68,22 @@
 }
 .mainInfoCon {
   width: 70vw;
+  height: 70vh;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .subCon {
-  width: 100%;
   height: 50vh;
   display: flex;
   justify-content: center;
+}
+.subInfoCon1 {
+  height: 60vh;
+  padding-top: 5px;
+}
+.subInfoCon2 {
+  height: 60vh;
 }
 .selImportBtn {
   width: 40vw;
@@ -140,4 +150,16 @@
   flex-direction: row;
   margin-top: 10px;
   margin-bottom: 15px;
+}
+.selectClient {
+  width: 12vw;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border-color: rgb(196, 196, 196);
+  border-radius: 6px;
+  margin-left: 40px;
 }

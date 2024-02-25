@@ -44,7 +44,7 @@ function App() {
         </div>
         <div className='subCon'>
           <div className='mainInfoCon'>
-            <div style={{paddingTop: 5}}>
+            <div className='subInfoCon1'>
               <button className='selImportBtn'>
                 <p style={{margin: 3, fontSize: 13}}>Select Import Name:</p>
                 <RiArrowDropDownLine size={25} />
@@ -90,7 +90,7 @@ function App() {
                 <p style={{fontSize: 13, marginLeft: 5}}>Select Tolerance Level</p>
               </div>
             </div>
-            <div>
+            <div className='subInfoCon2'>
               <p style={{fontSize: 13, marginTop: 0, marginBottom: 5 }}>Split schedule using social distancing?</p>
               <div className='radioBtnCon'>
                 <label style={{fontSize: 12, display: "flex", alignItems: "center"}}>
@@ -116,6 +116,38 @@ function App() {
                   <input type="radio" value="Yes" checked={true} style={{accentColor: "#0b125c"}} className='radioBtn'/>
                   Multiple
                 </label>
+              </div>
+              <div style={{display: "flex", flexDirection: "row", alignItems: "center"}}>
+                <p style={{fontSize: 13}}>Testing Center 1</p>
+                <button className='selectClient'>
+                  <p style={{margin: 0, fontSize: 13}}>Select Client</p>
+                  <RiArrowDropDownLine size={25} />
+                </button>
+                <TbClockHour7 size={20} style={{marginLeft: 3}} />
+              </div>
+              <div style={{display: "flex", flexDirection: "row", alignItems: "center"}}>
+                <p style={{fontSize: 13}}>Testing Center 2</p>
+                <button className='selectClient'>
+                  <p style={{margin: 0, fontSize: 13}}>Select Client</p>
+                  <RiArrowDropDownLine size={25} />
+                </button>
+                <TbClockHour7 size={20} style={{marginLeft: 3}} />
+              </div>
+              <div style={{display: "flex", flexDirection: "row", alignItems: "center"}}>
+                <p style={{fontSize: 13}}>Testing Center 3</p>
+                <button className='selectClient'>
+                  <p style={{margin: 0, fontSize: 13}}>Select Client</p>
+                  <RiArrowDropDownLine size={25} />
+                </button>
+                <TbClockHour7 size={20} style={{marginLeft: 3}} />
+              </div>
+              <div style={{display: "flex", flexDirection: "row", alignItems: "center"}}>
+                <p style={{fontSize: 13}}>Testing Center 4</p>
+                <button className='selectClient'>
+                  <p style={{margin: 0, fontSize: 13}}>Select Client</p>
+                  <RiArrowDropDownLine size={25} />
+                </button>
+                <TbClockHour7 size={20} style={{marginLeft: 3}} />
               </div>
             </div>
           </div>
