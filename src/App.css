@@ -7,7 +7,7 @@
 }
 .mainCon {
   background-color: white;
-  width: 80vw;
+  width: 70vw;
   height: 90vh;
   border-radius: 15px;
 }
@@ -15,7 +15,7 @@
   padding: 20px;
   padding-bottom: 0px;
   height: 13vh;
-  width: 80vw;
+  width: 70vw;
   display: flex;
   flex-direction: row;
   align-self: center;
@@ -26,17 +26,18 @@
 }
 .headerCon {
   height: 60px;
-  width: 60vw;
+  width: 50vw;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 .headerText {
   font-size: 2vw;
-  font-weight: 500;
+  font-weight: bold;
   width: 20vw;
   text-align: center;
   margin-bottom: 10px;
+  color: #0b125c;
 }
 .headerDivider {
   border-bottom: 1px solid rgb(196, 196, 196);
@@ -49,7 +50,7 @@
 }
 .Divider2 {
   border-bottom: 1px solid rgb(196, 196, 196);
-  width: 40vw;
+  width: 35vw;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -74,10 +75,10 @@
 }
 .Divider6 {
   border-bottom: 2px solid rgb(196, 196, 196);
-  width: 34vw;
+  width: 30vw;
 }
 .mainInfoCon {
-  width: 70vw;
+  width: 60vw;
   height: 60vh;
   display: flex;
   justify-content: space-between;
@@ -88,24 +89,26 @@
   justify-content: center;
 }
 .subInfoCon1 {
+  width: 37vw;
   height: 60vh;
   padding-top: 5px;
+  margin-right: 10px;
 }
 .subInfoCon2 {
   height: 60vh;
 }
 .selImportBtn {
-  width: 40vw;
+  width: 35vw;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   background-color: white;
-  border-color: rgb(196, 196, 196);
+  border: solid 2px rgb(196, 196, 196);
   border-radius: 6px;
 }
 .dragMainCon {
-  width: 38vw;
+  width: 33vw;
   height: 20vh;
   background-color: white;
   border-radius: 6px;
@@ -115,7 +118,7 @@
   padding: 10px;
 }
 .dragSubCon {
-  width: 38vw;
+  width: 33vw;
   height: 15vh;
   background-color: white;
   border-radius: 6px;
@@ -129,7 +132,7 @@
   flex-direction: column;
 }
 .uploadMain {
-  width: 40vw;
+  width: 33vw;
   height: 5vh;
   display: flex;
   justify-content: center;
@@ -170,7 +173,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: white;
-  border-color: rgb(196, 196, 196);
+  border: solid 2px rgb(196, 196, 196);
   border-radius: 6px;
   margin-left: 40px;
 }
@@ -179,20 +182,22 @@
   text-align: center;
   font-size: 14px;
   font-weight: bold;
+  color: #0b125c;
 }
 .continBtn {
-  width: 15vw;
+  width: 13vw;
   height: 4vh;
   background-color: #0b125c;
   color: white;
+  border: solid 2px rgb(11, 18, 92);
   border-radius: 4px;
 }
 .cancelBtn {
-  width: 15vw;
+  width: 13vw;
   height: 4vh;
   background-color: white;
   color: #ed8e11;
-  border-color: #ed8e11;
+  border: solid 2px rgb(237, 142, 17);
   border-radius: 4px;
 }
 #file-upload-button {

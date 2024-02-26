@@ -1,16 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 import { FaSquareXmark } from "react-icons/fa6";
-import LargeDropDown from './components/LargeDropDown';
 import ToggleSwitch from './components/ToggleSwitch';
 import DragAndDrop from './components/FileDrop';
 import styled from "styled-components";
 import { RiArrowDropDownLine } from "react-icons/ri";
-import { HiMiniDocumentText } from "react-icons/hi2";
 import { BsFileEarmarkImage } from "react-icons/bs";
-import { TbClockHour7 } from "react-icons/tb";
-import { useUpload } from './hooks';
 import { Button } from "@mui/material";
+import { PiClockThin } from "react-icons/pi";
 //
 const ToggleContainer = styled.div`
   display: flex;
@@ -20,15 +17,47 @@ const ToggleContainer = styled.div`
   height: 10%;
 `;
 //
+const BootstrapButton = styled(Button)({
+  boxShadow: 'none',
+  textTransform: 'none',
+  fontSize: 16,
+  padding: '6px 12px',
+  border: '1px solid',
+  lineHeight: 1.5,
+  backgroundColor: '#0063cc',
+  borderColor: '#0063cc',
+  fontFamily: [
+    '-apple-system',
+    'BlinkMacSystemFont',
+    '"Segoe UI"',
+    'Roboto',
+    '"Helvetica Neue"',
+    'Arial',
+    'sans-serif',
+    '"Apple Color Emoji"',
+    '"Segoe UI Emoji"',
+    '"Segoe UI Symbol"',
+  ].join(','),
+  '&:hover': {
+    backgroundColor: '#0069d9',
+    borderColor: '#0062cc',
+    boxShadow: 'none',
+  },
+  '&:active': {
+    boxShadow: 'none',
+    backgroundColor: '#0062cc',
+    borderColor: '#005cbf',
+  },
+  '&:focus': {
+    boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
+  },
+});
+//
 function App() {
   //
-  const [optionSelected, setOptionSelected] = useState<string>("")
-  const [showDropDown, setShowDropDown] = useState<boolean>(false);
-  const [progress, setProgress] = useState<number>(0)
-  //
-  const options = () => {
-    return ["Option 1", "Option 2", "Option 3"]
-  }
+  // const options = () => {
+  //   return ["Option 1", "Option 2", "Option 3"]
+  // }
   //optionSelection={optionSelected}
   return (
     <div className="App">
@@ -47,21 +76,21 @@ function App() {
             <div className='mainInfoCon'>
               <div className='subInfoCon1'>
                 <button className='selImportBtn'>
-                  <p style={{margin: 3, fontSize: 13}}>Select Import Name:</p>
+                  <p style={{margin: 3, fontSize: 13, color: "#0b125c", fontWeight: "bold"}}>Select Import Name:</p>
                   <RiArrowDropDownLine size={25} />
                 </button>
-                {showDropDown && (
+                {/* {showDropDown && (
                   <LargeDropDown options={options()} showDropDown={false}  />
-                )}
+                )} */}
                 <div className='Divider1'></div>
-                <p style={{fontSize: 13}}>Select a manifest that you'd like to import</p>
+                <p style={{fontSize: 13, color: "#0b125c", fontWeight: "bold"}}>Select a manifest that you'd like to import</p>
                 <div className='dragMainCon'>
                   <div className='dragSubCon'>
                     <div className='docIconMain'>
                       <DragAndDrop />
                     </div>
                     <div className='uploadMain'>
-                      <Button
+                      {/* <Button
                         variant="contained"
                         component="label"
                         style={{backgroundColor: "#0b125c"}}
@@ -79,7 +108,18 @@ function App() {
                           //onClick={onInputClick}
                           hidden
                         />
-                      </Button>  
+                      </Button>   */}
+                      <button className='uploadBtn'>
+                         <p style={{fontSize: 13, margin: 2 }}>Upload Manifest</p>
+                         {/* <input
+                          type="file"
+                          id="myfile"
+                          accept=".pdf, .jpg"
+                          //onChange={(e) => e.target.files && handleChangeFile(e)}
+                          //onClick={onInputClick}
+                          hidden
+                        /> */}
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -87,7 +127,7 @@ function App() {
                 <div className='fileMain'>
                   <BsFileEarmarkImage size={22} color='#ed8e11' />
                   <div style={{paddingLeft: 10}}>
-                    <div style={{display: "flex", flexDirection:"row", width: "35vw", justifyContent: "space-between", marginBottom: 3}}>
+                    <div style={{display: "flex", flexDirection:"row", width: "31vw", justifyContent: "space-between", marginBottom: 3}}>
                       <p style={{margin: 0, fontSize: 8, color: "gray"}}>WN-DAL-0726-NH20166.csv</p>
                       <p style={{margin: 0, fontSize: 8}}>5.7MB</p>
                     </div>
@@ -99,85 +139,90 @@ function App() {
                 </div>
                 <div className='Divider2'></div>
                 <div className='Divider3'></div>
-                  <p style={{fontSize: 13, marginBottom: 0, fontWeight: "500"}}>Elapse Data Checking:</p>
-                  <p style={{fontSize: 13, marginTop: 5, color: "#24c90a", marginBottom: 5}}>No Elapse Dates!</p>
+                  <p style={{fontSize: 13, marginBottom: 0, fontWeight: "bold", color: "#0b125c"}}>Elapse Data Checking:</p>
+                  <p style={{fontSize: 13, marginTop: 5, color: "#24c90a", marginBottom: 5, fontWeight: "bold"}}>No Elapse Dates!</p>
                 <div className='Divider3'></div>
-                <p style={{fontSize: 13, marginBottom: 0, fontWeight: "500", marginTop: 5}}>Tolerance Window:</p>
+                <p style={{fontSize: 13, marginBottom: 0, fontWeight: "bold", marginTop: 5, color: "#0b125c"}}>Tolerance Window:</p>
                 <div style={{display: "flex", flexDirection: "row", alignItems: "center"}}>
                   <ToggleContainer>
                     <ToggleSwitch />
                   </ToggleContainer>
-                  <p style={{fontSize: 13, marginLeft: 5}}>Toggle ON</p>
+                  <p style={{fontSize: 13, marginLeft: 5, color: "#0b125c", fontWeight: "200"}}>Toggle ON</p>
                   <div className='Divider4'></div>
-                  <TbClockHour7 size={20} />
-                  <p style={{fontSize: 13, marginLeft: 5}}>Select Tolerance Level</p>
+                  {/* <TbClockHour7 size={20} color='#0b125c' style={{fontWeight: "200"}} /> */}
+                  <PiClockThin size={20} color='#0b125c' />
+                  <p style={{fontSize: 13, marginLeft: 5, color: "#0b125c", fontWeight: "200"}}>Select Tolerance Level</p>
                 </div>
               </div>
               <div className='subInfoCon2'>
-                <p style={{fontSize: 13, marginTop: 0, marginBottom: 5 }}>Split schedule using social distancing?</p>
+                <p style={{fontSize: 13, marginTop: 0, marginBottom: 5, fontWeight: "bold", color: "#0b125c" }}>Split schedule using social distancing?</p>
                 <div className='radioBtnCon'>
-                  <label style={{fontSize: 12, display: "flex", alignItems: "center"}}>
+                  <label style={{fontSize: 12, display: "flex", alignItems: "center", fontWeight: "200", color: "#0b125c"}}>
                     <input type="radio" value="Yes" checked={true} style={{accentColor: "#0b125c"}} className='radioBtn'/>
                     Yes
                   </label>
-                  <label style={{fontSize: 12, display: "flex", alignItems: "center", marginLeft: 10}}>
+                  <label style={{fontSize: 12, display: "flex", alignItems: "center", marginLeft: 10, fontWeight: "200", color: "#0b125c"}}>
                     <input type="radio" value="Yes" checked={false} style={{accentColor: "#0b125c"}} className='radioBtn'/>
                     No
                   </label>
                 </div>
                 <div className='Divider3'></div>
-                <p style={{fontSize: 13, marginBottom: 0, fontWeight: "500"}}>Location Checking:</p>
-                <p style={{fontSize: 13, marginTop: 5, color: "#24c90a", marginBottom: 10}}>All Available!</p>
+                <p style={{fontSize: 13, marginBottom: 0, fontWeight: "bold", color: "#0b125c"}}>Location Checking:</p>
+                <p style={{fontSize: 13, marginTop: 5, color: "#24c90a", marginBottom: 10, fontWeight: "bold"}}>All Available!</p>
                 <div className='Divider3'></div>
-                <p style={{fontSize: 13, marginTop: 15, marginBottom: 5 }}>Client:</p>
+                <p style={{fontSize: 13, marginTop: 15, marginBottom: 5, fontWeight: "bold", color: "#0b125c" }}>Client:</p>
                 <div className='radioBtnCon'>
-                  <label style={{fontSize: 12, display: "flex", alignItems: "center"}}>
+                  <label style={{fontSize: 12, display: "flex", alignItems: "center", fontWeight: "200", color: "#0b125c"}}>
                     <input type="radio" value="Yes" checked={false} style={{accentColor: "#0b125c"}} className='radioBtn'/>
                     Single
                   </label>
-                  <label style={{fontSize: 12, display: "flex", alignItems: "center", marginLeft: 10}}>
+                  <label style={{fontSize: 12, display: "flex", alignItems: "center", marginLeft: 10, fontWeight: "200", color: "#0b125c"}}>
                     <input type="radio" value="Yes" checked={true} style={{accentColor: "#0b125c"}} className='radioBtn'/>
                     Multiple
                   </label>
                 </div>
                 <div style={{display: "flex", flexDirection: "row", alignItems: "center"}}>
-                  <p style={{fontSize: 13}}>Testing Center 1</p>
+                  <p style={{fontSize: 13, width: "9vw", color: "#0b125c", fontWeight: "200"}}>Testing Center 1</p>
                   <button className='selectClient'>
-                    <p style={{margin: 0, fontSize: 12}}>Select Client</p>
-                    <RiArrowDropDownLine size={25} />
+                    <p style={{margin: 0, fontSize: 12, color: "#0b125c", fontWeight: "200"}}>Select Client</p>
+                    <RiArrowDropDownLine size={25} color='#0b125c' />
                   </button>
-                  <TbClockHour7 size={20} style={{marginLeft: 5}} />
+                  {/* <TbClockHour7 size={20} style={{marginLeft: 5}} color='#0b125c' /> */}
+                  <PiClockThin size={20} color='#0b125c' style={{marginLeft: 5}} />
                 </div>
                 <div style={{display: "flex", flexDirection: "row", alignItems: "center"}}>
-                  <p style={{fontSize: 13}}>Testing Center 2</p>
+                  <p style={{fontSize: 13, width: "9vw", color: "#0b125c", fontWeight: "200"}}>Testing Center 2</p>
                   <button className='selectClient'>
-                    <p style={{margin: 0, fontSize: 12}}>Select Client</p>
-                    <RiArrowDropDownLine size={25} />
+                    <p style={{margin: 0, fontSize: 12, color: "#0b125c", fontWeight: "200"}}>Select Client</p>
+                    <RiArrowDropDownLine size={25} color='#0b125c' />
                   </button>
-                  <TbClockHour7 size={20} style={{marginLeft: 5}} />
+                  {/* <TbClockHour7 size={20} style={{marginLeft: 5}} color='#0b125c' /> */}
+                  <PiClockThin size={20} color='#0b125c' style={{marginLeft: 5}} />
                 </div>
                 <div style={{display: "flex", flexDirection: "row", alignItems: "center"}}>
-                  <p style={{fontSize: 13}}>Testing Center 3</p>
+                  <p style={{fontSize: 13, width: "9vw", color: "#0b125c", fontWeight: "200"}}>Testing Center 3</p>
                   <button className='selectClient'>
-                    <p style={{margin: 0, fontSize: 12}}>Select Client</p>
-                    <RiArrowDropDownLine size={25} />
+                    <p style={{margin: 0, fontSize: 12, color: "#0b125c", fontWeight: "200"}}>Select Client</p>
+                    <RiArrowDropDownLine size={25} color='#0b125c' />
                   </button>
-                  <TbClockHour7 size={20} style={{marginLeft: 5}} />
+                  {/* <TbClockHour7 size={20} style={{marginLeft: 5}} color='#0b125c' /> */}
+                  <PiClockThin size={20} color='#0b125c' style={{marginLeft: 5}} />
                 </div>
                 <div style={{display: "flex", flexDirection: "row", alignItems: "center"}}>
-                  <p style={{fontSize: 13}}>Testing Center 4</p>
+                  <p style={{fontSize: 13, width: "9vw", color: "#0b125c", fontWeight: "200"}}>Testing Center 4</p>
                   <button className='selectClient'>
-                    <p style={{margin: 0, fontSize: 12}}>Select Client</p>
-                    <RiArrowDropDownLine size={25} />
+                    <p style={{margin: 0, fontSize: 12, color: "#0b125c", fontWeight: "200"}}>Select Client</p>
+                    <RiArrowDropDownLine size={25} color='#0b125c' />
                   </button>
-                  <TbClockHour7 size={20} style={{marginLeft: 5}} />
+                  {/* <TbClockHour7 size={20} style={{marginLeft: 5}} color='#0b125c' /> */}
+                  <PiClockThin size={20} color='#0b125c' style={{marginLeft: 5}} />
                 </div>
               </div>
             </div>
           </div>
           <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
               <p className='messageText'>Data in the import file is correct. Please press Continue to import.</p>
-              <div style={{width: "45vw", display: "flex", justifyContent: "space-evenly"}}>
+              <div style={{width: "35vw", display: "flex", justifyContent: "space-evenly"}}>
                 <button className='continBtn'>
                   <text>Continue Import</text>
                 </button>
