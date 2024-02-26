@@ -14,7 +14,7 @@
 .mainTitleCon {
   padding: 20px;
   padding-bottom: 0px;
-  height: 60px;
+  height: 13vh;
   width: 80vw;
   display: flex;
   flex-direction: row;
@@ -41,7 +41,6 @@
 .headerDivider {
   border-bottom: 1px solid rgb(196, 196, 196);
   width: 16vw;
-  margin-bottom: 30px;
 }
 .Divider1 {
   border-bottom: 1px solid rgb(196, 196, 196);
@@ -50,13 +49,13 @@
 }
 .Divider2 {
   border-bottom: 1px solid rgb(196, 196, 196);
-  width: 41vw;
+  width: 40vw;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 .Divider3 {
   border-bottom: 1px solid rgb(196, 196, 196);
-  width: 16vw;
+  width: 17vw;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -66,15 +65,25 @@
   margin-left: 8px;
   margin-right: 8px;
 }
+.Divider5 {
+  /* border-left: 2px solid rgb(237, 142, 17);
+  height: 2px;
+  width: 10vw; */
+  border-bottom: 2px solid rgb(237, 142, 17);
+  width: 4px;
+}
+.Divider6 {
+  border-bottom: 2px solid rgb(196, 196, 196);
+  width: 34vw;
+}
 .mainInfoCon {
   width: 70vw;
-  height: 70vh;
+  height: 60vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 .subCon {
-  height: 50vh;
   display: flex;
   justify-content: center;
 }
@@ -96,7 +105,7 @@
   border-radius: 6px;
 }
 .dragMainCon {
-  width: 40vw;
+  width: 38vw;
   height: 20vh;
   background-color: white;
   border-radius: 6px;
@@ -106,7 +115,7 @@
   padding: 10px;
 }
 .dragSubCon {
-  width: 40vw;
+  width: 38vw;
   height: 15vh;
   background-color: white;
   border-radius: 6px;
@@ -129,7 +138,7 @@
 }
 .uploadBtn {
   width: 15vw;
-  height: 3vh;
+  height: 4vh;
   background-color: #0b125c;
   color: white;
   border-radius: 4px;
@@ -138,6 +147,8 @@
   width: 40vw;
   padding-left: 10px;
   padding-right: 10px;
+  display: flex;
+  flex-direction: row;
 }
 .radioBtn {
   margin: 0;
@@ -152,7 +163,7 @@
   margin-bottom: 15px;
 }
 .selectClient {
-  width: 12vw;
+  width: 10vw;
   height: 30px;
   display: flex;
   flex-direction: row;
@@ -162,4 +173,34 @@
   border-color: rgb(196, 196, 196);
   border-radius: 6px;
   margin-left: 40px;
+}
+.messageText {
+  width: 45vw;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+.continBtn {
+  width: 15vw;
+  height: 4vh;
+  background-color: #0b125c;
+  color: white;
+  border-radius: 4px;
+}
+.cancelBtn {
+  width: 15vw;
+  height: 4vh;
+  background-color: white;
+  color: #ed8e11;
+  border-color: #ed8e11;
+  border-radius: 4px;
+}
+#file-upload-button {
+  background-color: #0b125c;
+}
+.custom-file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
 }
